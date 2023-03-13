@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    background-color: rgb(255, 255, 255);
+    height: 64px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    display: flex;
+}
+.font{
+    font-family: 'Genos', sans-serif;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    width: 79px;
+}
+.logo img{
+    width: 80px;
+    height: 60px;
+}
+.flexbox{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 58px;
+}
+
+.flex-content{
+    width: 25%;
+    height: 305px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.heading{
+    background-color: rgb(27, 181, 192);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.heading-content{
+    width: 37%;
+    font-size: 25px;
+    font-family: 'Genos', sans-serif;
+    height: 25px;
+    color: white;
+}
+.input-field{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-container{
+    height: 80px;
+    align-items: center;
+}
+
+.input-container input{
+    height: 30px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 20px;
+    border: .5px solid rgb(46, 46, 46);
+}
+.submit{
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 100px;
+    height: 30px;
+    font-family: 'Genos', sans-serif;
+    cursor: pointer;
+    border: 1px solid rgb(41, 40, 40);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(27, 181, 192);
+}
+button:hover{
+    background-color: rgb(88, 228, 33);
+}
+.signup-user{
+    display: flex;
+    height: 19%;
+    justify-content: center;
+    align-items: center;
+}
+.signup-user div{
+    height: 30px;
+    width: 43%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Genos', sans-serif;
+}
+.sign{
+    cursor: pointer;
+}
+span{
+    color: green;
+}
+.submit2{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+.flex-content2{
+    width: 25%;
+    height: 392px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.heading-sign{
+    background-color: brown;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.fonticon{
+    display: flex;
+    justify-content: center;
+}
+i{
+    align-self: center;
+}
+
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 10px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #ff9800;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  #popup{
+    visibility: hidden;
+  }
