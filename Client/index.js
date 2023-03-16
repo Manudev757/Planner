@@ -1,3 +1,5 @@
+var username = "";
+
 function button() {
   var div = document.getElementById("popup");
   console.log(div);
@@ -5,6 +7,22 @@ function button() {
 }
 function Login() {
   window.location.href = "signup.html";
+}
+function logOut() {
+  if (confirm("Are you sure you want to Logout ?"))
+    window.location.href = "index.html";
+}
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+function openformedit(e) {
+  document.getElementById("myFormedit" + e).style.display = "block";
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+function closeFormedit(e) {
+  document.getElementById("myFormedit" + e).style.display = "none";
 }
 function signUp() {
   var email = document.getElementById("email").value;
@@ -51,7 +69,9 @@ function loginUser() {
     .then((res) => res.json())
     .then((data) => {
       if (data.token) {
-        console.log(data.token);
+        console.log(data.username);
+        localStorage.setItem("user", data.username);
+        console.log(data);
         localStorage.setItem("token", data.token);
         document.getElementById("popup-msg").innerHTML =
           "Successfully Loged In!";
@@ -70,20 +90,20 @@ function loginUser() {
     });
 }
 
-function createProject() {
-  const data = document.getElementById("project").value;
-  const project = {};
-  project.project = data;
-  fetch("http://localhost:7777/Dashboard", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      token: localStorage.getItem("token").toString(),
-    },
-    body: JSON.stringify(project),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.error) alert(data.error);
-    });
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
 }
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};

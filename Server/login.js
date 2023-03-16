@@ -21,6 +21,7 @@ const login = (req, res) => {
           );
           res.json({
             token: token,
+            username: user.username,
           });
         } else res.json({ message: "Wrong Password" });
       } else {

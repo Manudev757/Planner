@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@200&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/cb6a128dde.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./Assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Genos:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cb6a128dde.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
     <title>SignUp</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar">
-        <div class="logo"><div><img src="./Assets/logo.PNG"></div></div>
-        <div class="font"><div>MakeMyPlan</div></div>
+      <div class="logo">
+        <div><img src="./Assets/logo.PNG" /></div>
+      </div>
+      <div class="font"><div>MakeMyPlan</div></div>
     </div>
     <div id="popup" class="alert">
-        <p onclick="button()" class="closebtn">&times;</p>  
-        <strong id="popup-msg">Success!</strong>
+      <p onclick="button()" class="closebtn">&times;</p>
+      <strong id="popup-msg">Success!</strong>
     </div>
-   <div class="flexbox">
-    <div class="flex-content2">
+    <div class="flexbox">
+      <div class="flex-content2">
         <div class="heading-sign">
-            <h3 class="heading-content">Signup Form</h3>
+          <h3 class="heading-content">Signup Form</h3>
         </div>
         <div class="input-field">
-            <div class="input-container">
-                <div class="fonticon"><i class="fa-solid fa-user"></i>&nbsp;<input id="username" type="text" placeholder="Username"></div>
-                <br>
-                <br>
-                <div class="fonticon"><i class="fa-solid fa-lock"></i>&nbsp;<input id="password" type="password" placeholder="Password"></div>
-                <br>
-                <br>
-                <div class="fonticon"><i class="fa-sharp fa-solid fa-envelope"></i>&nbsp;<input id="email" type="text" placeholder="Email"></div>
-                <br>
-                <br>
+          <div class="input-container">
+            <div class="fonticon">
+              <i class="fa-solid fa-user"></i>&nbsp;<input
+                id="username"
+                type="text"
+                placeholder="Username"
+              />
             </div>
+            <br />
+            <br />
+            <div class="fonticon">
+              <i class="fa-solid fa-lock"></i>&nbsp;<input
+                id="password"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+            <br />
+            <br />
+            <div class="fonticon">
+              <i class="fa-sharp fa-solid fa-envelope"></i>&nbsp;<input
+                id="email"
+                type="text"
+                placeholder="Email"
+              />
+            </div>
+            <br />
+            <br />
+          </div>
         </div>
-        <br>
-        <br>
+        <br />
+        <br />
         <div class="submit2">
-            <button onclick="signUp()">Signup</button>
+          <button onclick="signUp()">Signup</button>
         </div>
-        <br>
-        <br>
-        <hr>
+        <br />
+        <br />
+        <hr />
         <!-- <div class="signup-user">
                 <div class="sign">Not a user ? <span>Signup</span></div>
         </div> -->
+      </div>
     </div>
-   </div>
-</body>
+  </body>
 </html>

@@ -1,11 +1,13 @@
 {
-  "name": "y",
+  "name": "final",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -13,15 +15,5 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "nodemon": "^2.0.21"
-  },
-  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://Manudev77@bitbucket.org/test-git-assignment/plannerapp.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://bitbucket.org/test-git-assignment/plannerapp/issues"
-  },
-  "homepage": "https://bitbucket.org/test-git-assignment/plannerapp#readme"
+  }
 }

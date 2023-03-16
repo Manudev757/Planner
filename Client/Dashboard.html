@@ -1,16 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/x-icon" href="./Assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/cb6a128dde.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="dashboard.css" />
+
     <title>MakeMyPlan</title>
-</head>
-<body>
-    <h1>Welcome User</h1>
-    <input id="project" type="text">
-    <button onclick="createProject()">Create</button>
-</body>
-<script src="index.js"></script>
+  </head>
+  <body id="body-tag">
+    <div class="navbar">
+      <div class="logo">
+        <div><img src="./Assets/logo.PNG" /></div>
+      </div>
+      <div class="font">
+        <div>MakeMyPlan</div>
+        <div id="theme" onclick="changeTheme()">
+          <i id="toggle" class="fa-regular fa-moon fa-xs"></i>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div><button onclick="logOut()">Logout</button></div>
+      </div>
+    </div>
+
+    <div class="text">Welcome <span id="userName"></span>...😀!</div>
+
+    <div class="flex-wrapper">
+      <!-- ####### Not started Bucket ########## -->
+      <div class="bucket notstarted">
+        <!-- ####### Top section ########### -->
+        <div class="ns ns-top">
+          <div>
+            <button class="open-button" onclick="openForm()">
+              Create Task &nbsp;<i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <!-- ####### dropdown ########### -->
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">
+              SortBy&nbsp;<i class="fa-solid fa-filter"></i>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+              <a onclick="sortC1('name1','not-started')"
+                >Name&nbsp;<i class="fa-solid fa-arrow-down-a-z"></i
+              ></a>
+              <a onclick="sortC1('startdate1','not-started')"
+                >Start Date&nbsp;<i class="fa-solid fa-arrow-up-wide-short"></i
+              ></a>
+              <a onclick="sortC1('enddate1','not-started')"
+                >End Date&nbsp;<i class="fa-solid fa-arrow-down-wide-short"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- ####### Middle section ########### -->
+        <div id="not-started" class="ns ns-mid drag query">
+          <!-- ####### Project Box start ########### -->
+
+          <!-- ####### Projetct Box End ########### -->
+        </div>
+      </div>
+      <!-- ####### Progress ########### -->
+      <div class="bucket ns progress">
+        <div class="bprogress bp-top">
+          <div>
+            In-Progress&nbsp;&nbsp;<i class="fa-solid fa-list-check"></i>
+          </div>
+          <div class="dropdown1">
+            <button onclick="myFunction1()" class="dropbtn1">
+              SortBy&nbsp;<i class="fa-solid fa-filter"></i>
+            </button>
+            <div id="myDropdown1" class="dropdown-content1">
+              <a onclick="sortC1('name1','in-progress')"
+                >Name &nbsp;<i class="fa-solid fa-arrow-down-a-z"></i
+              ></a>
+              <a onclick="sortC1('startdate1','in-progress')"
+                >Start Date&nbsp;<i class="fa-solid fa-arrow-up-wide-short"></i
+              ></a>
+              <a onclick="sortC1('enddate1','in-progress')"
+                >End Date&nbsp;<i class="fa-solid fa-arrow-down-wide-short"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div id="in-progress" class="bprogress bp-mid drag query"></div>
+      </div>
+      <!-- ####### completed ########### -->
+      <div class="bucket completed">
+        <div class="bcompleted bc-top">
+          <div>Completed&nbsp;<i class="fa-solid fa-circle-check"></i></div>
+          <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">
+              SortBy&nbsp;<i class="fa-solid fa-filter"></i>
+            </button>
+            <div id="myDropdown2" class="dropdown-content2">
+              <a onclick="sortC1('name1','completed')"
+                >Name&nbsp;<i class="fa-solid fa-arrow-down-a-z"></i
+              ></a>
+              <a onclick="sortC1('startdate1','completed')"
+                >Start Date&nbsp;<i class="fa-solid fa-arrow-up-wide-short"></i
+              ></a>
+              <a onclick="sortC1('enddate1','completed')"
+                >End Date&nbsp;<i class="fa-solid fa-arrow-down-wide-short"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="completed" class="bcompleted bc-mid drag query"></div>
+      </div>
+      <!-- ####### flex-box end ########### -->
+    </div>
+
+    <!-- ###################### -->
+    <div class="form-popup" id="myForm">
+      <div class="form-container">
+        <h1>Create Task</h1>
+
+        <label><b>Task Name</b></label>
+        <input
+          id="txt-input"
+          type="text"
+          placeholder="Enter the Task Name"
+          name="email"
+          required
+        />
+
+        <label for="psw"><b>Start Date</b></label>
+        <input
+          class="e-input"
+          id="e-input"
+          type="datetime-local"
+          name="psw"
+          required
+        />
+        <label for="psw"><b>End Date</b></label>
+        <input
+          class="s-input"
+          id="s-input"
+          type="datetime-local"
+          name="psw"
+          required
+        />
+        <br />
+        <br />
+        <button type="submit" class="btn" onclick="createTask()">
+          Create Task
+        </button>
+        <button type="button" class="btn cancel" onclick="closeForm()">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- ################################### -->
+
+    <script src="index.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+      var user = localStorage.getItem("user");
+      document.getElementById("userName").innerHTML = user;
+    </script>
+  </body>
 </html>

@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Genos", sans-serif;
+}
+.navbar {
+  background-color: rgb(255, 255, 255);
+  height: 64px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  display: flex;
+}
+.font {
+  font-family: "Genos", sans-serif;
+  font-size: 40px;
+  display: flex;
+  width: 93%;
+  align-items: center;
+}
+.font > div:nth-child(2) {
+  margin-left: auto;
+  margin-top: 6px;
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: 79px;
+}
+.logo img {
+  width: 80px;
+  height: 60px;
+}
+.font button {
+  width: 70px;
+  height: 33px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f52d2d;
+  border: 1px solid #f52d2d;
+  color: white;
+  cursor: pointer;
+}
+.font:nth-child(2) {
+  align-self: flex-start;
+}
+.flex-wrapper {
+  display: flex;
+}
+.bucket {
+  width: 30%;
+  background-color: rgb(49, 50, 50);
+  padding: 10px;
+  gap: 10px;
+}
+.flex-wrapper {
+  display: flex;
+  margin-top: 20px;
+  gap: 4%;
+  width: 95%;
+  margin: 32px;
+  height: 500px;
+}
+#userName {
+  font-size: 25px;
+  color: red;
+}
+.text {
+  font-size: 30px;
+  margin-left: 29px;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+.notstarted {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ns-top {
+  height: 10%;
+  background-color: rgb(79, 79, 79);
+  display: flex;
+  justify-content: space-between;
+}
+.ns-top div:nth-child(1) {
+  align-self: center;
+  width: 100px;
+}
+.ns-top div:nth-child(1) button {
+  font-weight: bolder;
+  width: 115px;
+  height: 30px;
+  background-color: rgb(89, 209, 29);
+  color: white;
+  font-size: 19px;
+  border: 1px solid lawngreen;
+  margin-left: 12px;
+  cursor: pointer;
+}
+.ns-top div:nth-child(1) button:hover {
+  background-color: rgb(85, 255, 0);
+}
+.ns-mid {
+  overflow-y: scroll;
+  height: 80%;
+  background-color: rgb(49, 50, 50);
+}
+.dropbtn,
+.dropbtn1,
+.dropbtn2 {
+  background-color: #3498db;
+  color: white;
+  font-size: 19px;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  border: 1px solid #1d86ee;
+  width: 95px;
+  margin-right: 12px;
+}
+.dropbtn:hover,
+.dropbtn:focus,
+.dropbtn1:hover,
+.dropbtn1:focus,
+.dropbtn2:hover,
+.dropbtn2:focus {
+  background-color: #2980b9;
+}
+
+.dropdown,
+.dropdown1,
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+  align-self: center;
+}
+
+.dropdown-content,
+.dropdown-content1,
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 94px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
+
+.dropdown-content a,
+.dropdown-content1 a,
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 7px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover,
+.dropdown1 a:hover,
+.dropdown2 a:hover {
+  background-color: #323232;
+  color: white;
+  cursor: pointer;
+}
+.show {
+  display: block;
+}
+.show1 {
+  display: block;
+}
+.show2 {
+  display: block;
+}
+.top-section {
+  display: flex;
+  justify-content: space-between;
+}
+#in-progress,
+#completed {
+  overflow-y: scroll;
+}
+/* #in-progress,#completed,.ns-mid::-webkit-scrollbar{
+  display: none;
+} */
+.top-section div:nth-child(1) {
+  width: 70%;
+  font-size: 22px;
+  font-weight: bold;
+  /* background-color: white; */
+}
+.top-section div:nth-child(2) {
+  width: 32%;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  background-color: #636363;
+}
+.top-section div {
+  width: 50px;
+  height: 30px;
+}
+.dragable {
+  position: absolute;
+  width: 80%;
+  height: 150px;
+  z-index: 9;
+  box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.dragzone {
+  display: flex;
+  width: 84%;
+  flex-direction: column;
+}
+.dragable .dragzone {
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  z-index: 10;
+}
+.ns-mid > .dragable {
+  background-color: #ffffff;
+  width: 70%;
+  height: 115px;
+}
+.wrapper {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.mid-section {
+  background-color: #ffffff;
+  height: 90px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bottom-section {
+  background-color: #ffffff;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.nsbt {
+  background-color: #f1f1f1;
+  width: 30%;
+  align-self: center;
+  margin: 9px;
+  height: 24px;
+}
+.bottom-section button {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-weight: bolder;
+  cursor: pointer;
+  color: white;
+  border: 1px solid #1d86ee;
+  background-color: #1d86ee;
+}
+.delete button {
+  border: 1px solid #f52d2d;
+  background-color: #f52d2d;
+}
+.box {
+  background-color: #ffffff;
+  width: 32%;
+  height: 58px;
+  justify-content: space-evenly;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+}
+.date {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 22px;
+}
+#datefr {
+  background-color: tomato;
+  color: white;
+  font-weight: bolder;
+  height: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid tomato;
+  width: -webkit-fill-available;
+}
+.start,
+.end {
+  background-color: #ffffff;
+  color: black;
+  font-weight: bolder;
+  font-size: 18px;
+  margin-left: 0px;
+  font-weight: bolder;
+}
+.timer {
+  height: 0px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 39%;
+  border-radius: 10px;
+  top: 200px;
+  border: 3px solid #f1f1f1;
+  z-index: 10;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 94%;
+  font-weight: bolder;
+  padding: 8px;
+  margin: 5px 0 8px 0;
+  border: 1px solid #7c7c7c;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+.e-input,
+.s-input {
+  background-color: rgb(198, 224, 28);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  height: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid rgb(198, 224, 28);
+  width: 296px;
+  width: -webkit-fill-available;
+}
+#txtinput {
+  color: black;
+  font-weight: bolder;
+}
+.btn {
+  font-size: 20px;
+  font-weight: bold;
+}
+.progress {
+  display: flex;
+  flex-direction: column;
+}
+.bprogress {
+  width: 100%;
+  gap: 10px;
+}
+
+.bp-top {
+  height: 10%;
+  background-color: #4f4f4f;
+  display: flex;
+  color: rgb(255, 255, 255);
+  justify-content: space-evenly;
+}
+.bp-mid {
+  height: 90%;
+  background-color: #313232;
+}
+.fa-list-check {
+  color: rgb(255, 113, 18);
+}
+.bcompleted {
+  width: 100%;
+  gap: 10px;
+}
+.bc-top {
+  height: 10%;
+  background-color: #4f4f4f;
+  display: flex;
+  color: rgb(255, 255, 255);
+  justify-content: space-evenly;
+}
+.bp-top > div:nth-child(1),
+.bc-top > div:nth-child(1) {
+  font-size: 23px;
+  align-self: center;
+  font-weight: bolder;
+}
+.bc-mid {
+  width: 95%;
+  background-color: rgb(49, 50, 50);
+  padding: 10px;
+  gap: 10px;
+  height: 90%;
+}
+.fa-circle-check {
+  color: rgb(90, 255, 13);
+}
+.query {
+  height: 80%;
+}
+.query::-webkit-scrollbar {
+  display: none;
+}
+.e-dateinput,
+.s-dateinput {
+  font-size: 15px;
+  font-weight: bolder;
+}
+.timer {
+  display: flex;
+  flex-direction: column;
+}
+.timer > div {
+  align-self: center;
+  font-size: 16px;
+  font-weight: bolder;
+  color: red;
+}
+.dynamic > div {
+  background-color: #ffffff;
+}
+
+.timer.not-started > * {
+  color: red;
+}
+.timer.in-progress > * {
+  color: #f69c00;
+}
+.timer.completed > * {
+  color: green;
+}

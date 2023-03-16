@@ -1,7 +1,7 @@
 {
-  "dhoni_love7s": {
-    "username": "dhoni_love7s",
-    "password": "12335",
+  "dhoni_love7": {
+    "username": "dhoni_love7",
+    "password": "12345",
     "email": "aswin@gmail.com"
   },
   "manu": {
@@ -28,5 +28,20 @@
     "username": "Manudev77",
     "password": "12345",
     "email": "manu@gmail.com"
+  },
+  "ee": {
+    "username": "ee",
+    "password": "12345",
+    "email": "eedfghnm"
+  },
+  "deva": {
+    "username": "deva",
+    "password": "12345",
+    "email": "deva@gmail.com"
+  },
+  "dev_manu": {
+    "username": "dev_manu",
+    "password": "12345",
+    "email": "devmanu@gmail.com"
   }
 }
