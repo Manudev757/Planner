@@ -5,7 +5,7 @@
       "startDate": "2023-03-24T15:42",
       "endDate": "2023-03-30T15:45",
       "remaning": 6,
-      "status": "in-progress",
+      "status": "not-started",
       "id": 70
     },
     "python": {
@@ -29,7 +29,7 @@
       "startDate": "2023-03-16T15:42",
       "endDate": "2023-03-17T15:42",
       "remaning": 1,
-      "status": "not-started",
+      "status": "in-progress",
       "id": 2
     },
     "ReactJs": {
@@ -37,7 +37,7 @@
       "startDate": "2023-03-18T16:13",
       "endDate": "2023-03-22T16:14",
       "remaning": 4,
-      "status": "completed",
+      "status": "in-progress",
       "id": 89
     },
     "new task": {
@@ -53,8 +53,24 @@
       "startDate": "2023-03-11T16:46",
       "endDate": "2023-03-30T16:46",
       "remaning": 19,
-      "status": "in-progress",
+      "status": "completed",
       "id": 34
+    },
+    "DateNow": {
+      "name": "DateNow",
+      "startDate": "2023-03-17T08:36",
+      "endDate": "2023-03-18T08:36",
+      "remaning": 1,
+      "status": "completed",
+      "id": 1679022409217
+    },
+    "dcfv": {
+      "name": "dcfv",
+      "startDate": "",
+      "endDate": "",
+      "remaning": null,
+      "status": "not-started",
+      "id": 1679027984413
     }
   },
   "dhoni_love7": {
@@ -71,7 +87,7 @@
       "startDate": "2023-03-17T17:08",
       "endDate": "2023-03-23T17:08",
       "remaning": 6,
-      "status": "not-started",
+      "status": "in-progress",
       "id": 168
     }
   }

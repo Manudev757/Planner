@@ -107,3 +107,27 @@ window.onclick = function (event) {
     }
   }
 };
+function showPassword() {
+  var tog = document.querySelector("#pass");
+  if (tog.className === "open") {
+    document.getElementById("image").src = "./Assets/eyeclose.png";
+    document.getElementById("l-password").type = "text";
+    tog.setAttribute("class", "close");
+  } else {
+    document.getElementById("image").src = "./Assets/eye.png";
+    document.getElementById("l-password").type = "password";
+    tog.setAttribute("class", "open");
+  }
+}
+function showPasswords() {
+  var tog = document.querySelector("#pass-s");
+  if (tog.className === "open") {
+    document.getElementById("image").src = "./Assets/eyeclose.png";
+    document.getElementById("password").type = "text";
+    tog.setAttribute("class", "close");
+  } else {
+    document.getElementById("image").src = "./Assets/eye.png";
+    document.getElementById("password").type = "password";
+    tog.setAttribute("class", "open");
+  }
+}

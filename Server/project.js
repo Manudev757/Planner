@@ -24,12 +24,13 @@ const project = (req, res) => {
           );
         } else {
           var existData = JSON.parse(result);
+          console.log("gg", datas);
           if (loggedUser in existData) existData[loggedUser][name] = datas;
           else {
             existData[loggedUser] = {};
             existData[loggedUser][name] = datas;
           }
-          console.log("project2", user);
+          // console.log("project2", user);
           fs.writeFile(
             "./Database/projectDb.json",
             JSON.stringify(existData, null, 2),

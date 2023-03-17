@@ -81,7 +81,7 @@ function setPorjects(project, container) {
             <div class="s-date box">
               <div class="date start">Start Date</div>
               <div class="date s-dateinput">
-              ${projects[i].startDate}
+              ${projects[i].startDate.split("T")[0]}
               </div>
             </div>
             <div class="timer ${
@@ -164,7 +164,6 @@ function setPorjects(project, container) {
       var color = document.querySelectorAll("#completed-div");
       color.forEach((e) => {
         if (e.innerHTML.split(";")[1] === "in-progress") {
-          console.log(e);
           e.style.backgroundColor = "#F69C00";
         }
       });
@@ -219,7 +218,6 @@ fetch("/Dashboard", {
   .then((data) => data.json())
   .then((res) => {
     var keys = Object.keys(res);
-    // console.log(res);
     var array = [];
     for (var i = 0; i < keys.length; i++) {
       array.push(res[keys[i]]);
@@ -270,7 +268,6 @@ function createTask() {
   var start = new Date(startDate);
   var end = new Date(endDate);
   var total_seconds = Math.abs(end - start) / 1000;
-  // console.log(total_seconds.split("T")[0]);
   var days_difference = Math.floor(total_seconds / (60 * 60 * 24));
   var project = {};
   project.name = taskName;
@@ -278,9 +275,7 @@ function createTask() {
   project.endDate = endDate;
   project.remaning = days_difference;
   project.status = "not-started";
-  // project.id = Math.random();
-  project.id =
-    Math.round(Math.random() * 100) + Math.round(Math.random() * 100);
+  project.id = Date.now();
   fetch("/showTask", {
     method: "POST",
     headers: {
@@ -330,6 +325,26 @@ function updateTask(e, id) {
     .then((res) => {
       window.location.reload();
       alert(res.message);
+    });
+}
+
+function filterTask() {
+  var element = document.getElementById("search").value;
+  fetch("/searchTask", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      token: localStorage.getItem("token").toString(),
+    },
+    body: JSON.stringify({ search: element }),
+  })
+    .then((data) => data.json())
+    .then((res) => {
+      if (res.message) {
+        alert(res.message);
+      } else {
+        setPorjects(res, res[0].status);
+      }
     });
 }
 

@@ -27,9 +27,20 @@
         <div><button onclick="logOut()">Logout</button></div>
       </div>
     </div>
-
-    <div class="text">Welcome <span id="userName"></span>...😀!</div>
-
+    <div class="searchdiv">
+      <div class="text">Welcome <span id="userName"></span>...😀!</div>
+      <div class="search-container">
+        <input
+          id="search"
+          type="text"
+          placeholder="Search a task.."
+          name="search"
+        />
+        <button onclick="filterTask()" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
     <div class="flex-wrapper">
       <!-- ####### Not started Bucket ########## -->
       <div class="bucket notstarted">

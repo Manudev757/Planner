@@ -11,7 +11,7 @@ const signUp = require("./Server/signup");
 const edit = require("./Server/edit");
 const Delete = require("./Server/delete");
 const setStatus = require("./Server/setStatus");
-// const Sort = require("./Server/sort");
+const serach = require("./Server/search");
 
 app.use(express.json());
 app.use(express.static("Client"));
@@ -23,6 +23,7 @@ app.post("/Dashboard", verifyUser, dashboard);
 app.post("/edit", verifyUser, edit);
 app.post("/delete", verifyUser, Delete);
 app.post("/status", verifyUser, setStatus);
+app.post("/searchTask", verifyUser, serach);
 
 app.listen(process.env.PORT, (err) => {
   if (err) console.log(err);
