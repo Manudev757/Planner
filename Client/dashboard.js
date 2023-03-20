@@ -74,7 +74,7 @@ function setPorjects(project, container) {
         <div class="dragzone">
           <div id="top" class="top-section dynamic">
             <div>&nbsp;${projects[i].name}</div>
-            <div id="${container}-div">&nbsp;${projects[i].status}</div>
+            <div id="completed-div">&nbsp;${projects[i].status}</div>
           </div>
 
           <div class="mid-section">
@@ -94,7 +94,7 @@ function setPorjects(project, container) {
             <div class="e-date box">
               <div class="date end">End Date</div>
               <div class="date e-dateinput">
-              ${projects[i].endDate}
+              ${projects[i].endDate.split("T")[0]}
               </div>
             </div>
           </div>
@@ -188,12 +188,11 @@ function handleDrag() {
     });
     draggable.addEventListener("dragend", (e) => {
       draggable.classList.remove("dragging");
-
       fetch("/status", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          token: localStorage.getItem("token").toString(),
+          token: sessionStorage.getItem("token").toString(),
         },
         body: JSON.stringify({
           id: e.target.id,
@@ -211,12 +210,20 @@ fetch("/Dashboard", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    token: localStorage.getItem("token").toString(),
+    token:
+      sessionStorage.getItem("token") != null
+        ? sessionStorage.getItem("token").toString()
+        : "",
   },
   body: "",
 })
   .then((data) => data.json())
   .then((res) => {
+    if (res.error) {
+      alert(res.error);
+      window.location.href = "index.html";
+      return;
+    }
     var keys = Object.keys(res);
     var array = [];
     for (var i = 0; i < keys.length; i++) {
@@ -280,7 +287,7 @@ function createTask() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      token: localStorage.getItem("token").toString(),
+      token: sessionStorage.getItem("token").toString(),
     },
     body: JSON.stringify(project),
   })
@@ -290,13 +297,6 @@ function createTask() {
       alert(res.message);
     });
 }
-function myFunction1() {
-  document.getElementById("myDropdown1").classList.toggle("show1");
-}
-function myFunction2() {
-  document.getElementById("myDropdown2").classList.toggle("show2");
-}
-// document.getElementById("toggle").className = sessionStorage.getItem("dark");
 
 function updateTask(e, id) {
   var taskName = document.getElementById("txt-input" + e).value;
@@ -317,7 +317,7 @@ function updateTask(e, id) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      token: localStorage.getItem("token").toString(),
+      token: sessionStorage.getItem("token").toString(),
     },
     body: JSON.stringify(project),
   })
@@ -334,7 +334,7 @@ function filterTask() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      token: localStorage.getItem("token").toString(),
+      token: sessionStorage.getItem("token").toString(),
     },
     body: JSON.stringify({ search: element }),
   })
@@ -347,7 +347,6 @@ function filterTask() {
       }
     });
 }
-
 function deleteTask(e) {
   var deleteTask = e;
   if (confirm("Are you sure want you to delete the Task?"))
@@ -355,7 +354,7 @@ function deleteTask(e) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        token: localStorage.getItem("token").toString(),
+        token: sessionStorage.getItem("token").toString(),
       },
       body: JSON.stringify({ id: deleteTask }),
     })
@@ -366,18 +365,19 @@ function deleteTask(e) {
 }
 
 function sortC1(e, container) {
+  document.getElementById("myDropdown1").style.display = "none";
+  document.getElementById("myDropdown2").style.display = "none";
   var sortType = e;
   fetch("/Dashboard", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      token: localStorage.getItem("token").toString(),
+      token: sessionStorage.getItem("token").toString(),
     },
     body: JSON.stringify({ sort: sortType, container }),
   })
     .then((data) => data.json())
     .then((res) => {
-      // console.log(res);
       setPorjects(res, container);
     });
 }

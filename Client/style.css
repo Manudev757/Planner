@@ -95,6 +95,8 @@ button:hover {
   height: 19%;
   justify-content: center;
   align-items: center;
+  background-color: #393939;
+  color: white;
 }
 .signup-user div {
   height: 30px;
@@ -106,8 +108,12 @@ button:hover {
 .sign {
   cursor: pointer;
 }
+.sign a {
+  color: #11f211;
+  text-decoration: none;
+}
 span {
-  color: green;
+  color: #11f211;
 }
 .submit2 {
   display: flex;

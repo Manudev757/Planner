@@ -35,7 +35,6 @@ const signUp = (req, res) => {
       } else {
         let userAdd = JSON.parse(data);
         let checkUser = Object.keys(userAdd);
-        console.log(userAdd);
         for (var i = 0; i < checkUser.length; i++) {
           if (userAdd[checkUser[i]].email === email) exist = true;
         }

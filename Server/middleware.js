@@ -4,7 +4,7 @@ const verifyUser = (req, res, next) => {
   var token = req.headers.token;
   if (!token) {
     res.json({
-      error: "You are not an Authorized user Sign up First!!",
+      error: "You are not Authorized to this Page... Login First!!🧐",
     });
     res.status(401);
   } else {

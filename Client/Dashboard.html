@@ -10,10 +10,10 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="dashboard.css" />
-
     <title>MakeMyPlan</title>
   </head>
   <body id="body-tag">
+    <div id="loader" class="center"></div>
     <div class="navbar">
       <div class="logo">
         <div><img src="./Assets/logo.PNG" /></div>
@@ -174,7 +174,7 @@
     <script src="index.js"></script>
     <script src="dashboard.js"></script>
     <script>
-      var user = localStorage.getItem("user");
+      var user = sessionStorage.getItem("user");
       document.getElementById("userName").innerHTML = user;
     </script>
   </body>

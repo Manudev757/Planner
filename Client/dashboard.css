@@ -47,6 +47,7 @@
 }
 .flex-wrapper {
   display: flex;
+  z-index: 0;
 }
 .bucket {
   width: 30%;
@@ -59,6 +60,7 @@
   margin-top: 20px;
   gap: 4%;
   width: 95%;
+  z-index: 0;
   margin: 32px;
   height: 500px;
 }
@@ -300,6 +302,7 @@
   font-weight: bolder;
   font-size: 18px;
   margin-left: 0px;
+  text-align: center;
   font-weight: bolder;
 }
 .timer {
@@ -441,8 +444,9 @@
 }
 .e-dateinput,
 .s-dateinput {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bolder;
+  text-align: center;
 }
 .timer {
   display: flex;
@@ -480,7 +484,7 @@
   padding: 6px 10px;
   margin-top: 19px;
   margin-right: 16px;
-  background: #ddd;
+  background: #4eff77;
   font-size: 17px;
   border: none;
   cursor: pointer;
@@ -497,3 +501,27 @@
   font-size: 17px;
   border: none;
 }
+
+/* #loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #00f0dc;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+} */

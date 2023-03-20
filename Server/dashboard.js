@@ -2,11 +2,10 @@ const fs = require("fs");
 
 const dashboard = (req, res) => {
   var needSort = req.body.sort;
-  // console.log(needSort);
   var container = req.body.container;
   fs.readFile("./Database/projectDb.json", (err, data) => {
-    try{
-      if (data != undefined || data != null || data != '') {
+    try {
+      if (data != undefined || data != null || data != "") {
         var userProject = JSON.parse(data);
         var projects = userProject[req.user.username];
         var keys = Object.keys(projects);
@@ -15,13 +14,12 @@ const dashboard = (req, res) => {
           array.push(projects[keys[i]]);
         }
         array = array.filter((val) => val.status == container);
-  
+
         if (needSort != undefined) {
           if (needSort === "name1") {
             array.sort((a, b) => {
               return a.name.localeCompare(b.name);
             });
-            // console.log(array);
             res.json(array);
           }
           if (needSort === "startdate1") {
@@ -30,7 +28,7 @@ const dashboard = (req, res) => {
               var edate = new Date(b.startDate).getTime();
               return sdate - edate;
             });
-            console.log("sdd",array);
+            console.log("sdd", array);
             res.json(array);
           }
           if (needSort === "enddate1") {
@@ -43,11 +41,7 @@ const dashboard = (req, res) => {
           }
         } else res.json(projects);
       }
-    }
-    catch(e)
-    {
-
-    }
+    } catch (e) {}
   });
 };
 

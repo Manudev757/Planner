@@ -1,13 +1,5 @@
 {
   "manu": {
-    "java": {
-      "name": "java",
-      "startDate": "2023-03-24T15:42",
-      "endDate": "2023-03-30T15:45",
-      "remaning": 6,
-      "status": "not-started",
-      "id": 70
-    },
     "python": {
       "name": "python",
       "startDate": "2023-03-25T15:45",
@@ -48,29 +40,29 @@
       "status": "completed",
       "id": 125
     },
-    "updated": {
-      "name": "updated",
-      "startDate": "2023-03-11T16:46",
-      "endDate": "2023-03-30T16:46",
-      "remaning": 19,
-      "status": "completed",
-      "id": 34
-    },
     "DateNow": {
       "name": "DateNow",
       "startDate": "2023-03-17T08:36",
       "endDate": "2023-03-18T08:36",
       "remaning": 1,
-      "status": "completed",
+      "status": "in-progress",
       "id": 1679022409217
     },
-    "dcfv": {
-      "name": "dcfv",
-      "startDate": "",
-      "endDate": "",
-      "remaning": null,
+    "MongoDb": {
+      "name": "MongoDb",
+      "startDate": "2023-03-24T16:20",
+      "endDate": "2023-03-25T14:20",
+      "remaning": 0,
       "status": "not-started",
-      "id": 1679027984413
+      "id": 1679043013690
+    },
+    "Angular FE": {
+      "name": "Angular FE",
+      "startDate": "2023-03-19T20:10",
+      "endDate": "2023-03-26T20:10",
+      "remaning": 7,
+      "status": "not-started",
+      "id": 1679150430997
     }
   },
   "dhoni_love7": {
@@ -79,7 +71,7 @@
       "startDate": "2023-03-17T17:06",
       "endDate": "2023-03-18T17:06",
       "remaning": 1,
-      "status": "not-started",
+      "status": "in-progress",
       "id": 101
     },
     "Sql": {
@@ -89,6 +81,42 @@
       "remaning": 6,
       "status": "in-progress",
       "id": 168
+    }
+  },
+  "reema": {
+    "werfgth": {
+      "name": "werfgth",
+      "startDate": "2023-03-18T15:47",
+      "endDate": "2023-03-24T15:48",
+      "remaning": 6,
+      "status": "completed",
+      "id": 1679048284262
+    },
+    "aaaa": {
+      "name": "aaaa",
+      "startDate": "2023-03-02T15:48",
+      "endDate": "2023-03-18T15:48",
+      "remaning": 16,
+      "status": "in-progress",
+      "id": 1679048298894
+    }
+  },
+  "Dhoni": {
+    "WorldCup 2023": {
+      "name": "WorldCup 2023",
+      "startDate": "2023-03-19T20:24",
+      "endDate": "2023-03-19T20:24",
+      "remaning": 0,
+      "status": "in-progress",
+      "id": 1679151302843
+    },
+    "Ipl 2023": {
+      "name": "Ipl 2023",
+      "startDate": "2023-03-31T20:25",
+      "endDate": "2023-05-20T20:25",
+      "remaning": 50,
+      "status": "in-progress",
+      "id": 1679151328372
     }
   }
 }

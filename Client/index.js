@@ -9,17 +9,21 @@ function Login() {
   window.location.href = "signup.html";
 }
 function logOut() {
-  if (confirm("Are you sure you want to Logout ?"))
+  if (confirm("Are you sure you want to Logout ?")) {
     window.location.href = "index.html";
+    sessionStorage.clear();
+  }
 }
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+  document.querySelector(".flex-wrapper").style.filter = "blur(10px)";
 }
 function openformedit(e) {
   document.getElementById("myFormedit" + e).style.display = "block";
 }
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+  document.querySelector(".flex-wrapper").style.filter = "none";
 }
 function closeFormedit(e) {
   document.getElementById("myFormedit" + e).style.display = "none";
@@ -70,11 +74,11 @@ function loginUser() {
     .then((data) => {
       if (data.token) {
         console.log(data.username);
-        localStorage.setItem("user", data.username);
+        sessionStorage.setItem("user", data.username);
         console.log(data);
-        localStorage.setItem("token", data.token);
+        sessionStorage.setItem("token", data.token);
         document.getElementById("popup-msg").innerHTML =
-          "Successfully Loged In!";
+          "Successfully Logged In!";
         document.getElementById("popup").style.opacity = "1";
         document.getElementById("popup").style.backgroundColor = "#12E535";
         document.getElementById("popup").style.visibility = "visible";
@@ -92,6 +96,14 @@ function loginUser() {
 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
+}
+function myFunction1() {
+  document.getElementById("myDropdown1").classList.toggle("show1");
+  document.getElementById("myDropdown1").style.display = "block";
+}
+function myFunction2() {
+  document.getElementById("myDropdown2").classList.toggle("show2");
+  document.getElementById("myDropdown2").style.display = "block";
 }
 
 // Close the dropdown if the user clicks outside of it
