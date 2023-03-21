@@ -67,7 +67,7 @@ function getRemainingTime(start, end, status) {
 function setPorjects(project, container) {
   var projects = project;
   let renderProject = ``;
-  console.log(container);
+  console.log(document.querySelector("#" + container));
   document.querySelector("#" + container).innerHTML = ``;
   for (var i = 0; i < projects.length; i++) {
     renderProject = `
@@ -294,8 +294,11 @@ function createTask() {
   })
     .then((data) => data.json())
     .then((res) => {
-      window.location.reload();
-      alert(res.message);
+      if (res.Info) alert(res.Info);
+      else {
+        window.location.reload();
+        alert(res.message);
+      }
     });
 }
 

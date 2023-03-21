@@ -12,6 +12,7 @@ const project = (req, res) => {
       const name = datas.name;
       project[name] = datas;
       user[loggedUser] = project;
+      var prj = Object.keys(user[loggedUser]);
       fs.readFile("./Database/projectDb.json", (err, result) => {
         if (err) {
           console.log("project", user);
@@ -24,18 +25,25 @@ const project = (req, res) => {
           );
         } else {
           var existData = JSON.parse(result);
-          if (loggedUser in existData) existData[loggedUser][name] = datas;
+          var keys = Object.keys(existData[loggedUser]);
+          if (keys.includes(prj[0]))
+            res.json({
+              Info: "Task Name Already Exsist, Please choose Another Name..!",
+            });
           else {
-            existData[loggedUser] = {};
-            existData[loggedUser][name] = datas;
-          }
-          fs.writeFile(
-            "./Database/projectDb.json",
-            JSON.stringify(existData, null, 2),
-            (err) => {
-              if (!err) res.json({ message: "Task Added" });
+            if (loggedUser in existData) existData[loggedUser][name] = datas;
+            else {
+              existData[loggedUser] = {};
+              existData[loggedUser][name] = datas;
             }
-          );
+            fs.writeFile(
+              "./Database/projectDb.json",
+              JSON.stringify(existData, null, 2),
+              (err) => {
+                if (!err) res.json({ message: "Task Added" });
+              }
+            );
+          }
         }
       });
     }
