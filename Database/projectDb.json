@@ -29,7 +29,7 @@
       "startDate": "2023-03-18T16:13",
       "endDate": "2023-03-22T16:14",
       "remaning": 4,
-      "status": "in-progress",
+      "status": "completed",
       "id": 89
     },
     "new task": {
@@ -40,20 +40,12 @@
       "status": "completed",
       "id": 125
     },
-    "DateNow": {
-      "name": "DateNow",
-      "startDate": "2023-03-17T08:36",
-      "endDate": "2023-03-18T08:36",
-      "remaning": 1,
-      "status": "in-progress",
-      "id": 1679022409217
-    },
     "MongoDb": {
       "name": "MongoDb",
       "startDate": "2023-03-24T16:20",
       "endDate": "2023-03-25T14:20",
       "remaning": 0,
-      "status": "not-started",
+      "status": "in-progress",
       "id": 1679043013690
     },
     "Angular FE": {
@@ -63,6 +55,14 @@
       "remaning": 7,
       "status": "not-started",
       "id": 1679150430997
+    },
+    "Article": {
+      "name": "Article",
+      "startDate": "2023-03-23T12:11",
+      "endDate": "2023-03-25T12:11",
+      "remaning": 2,
+      "status": "not-started",
+      "id": 1679380912846
     }
   },
   "dhoni_love7": {
@@ -118,5 +118,6 @@
       "status": "in-progress",
       "id": 1679151328372
     }
-  }
+  },
+  "Ram s": {}
 }

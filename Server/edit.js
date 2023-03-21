@@ -1,7 +1,6 @@
 const fs = require("fs");
 
 const edit = (req, res) => {
-  console.log("edit route");
   var updatedForm = req.body;
   fs.readFile("./Database/projectDb.json", (err, data) => {
     var userProject = JSON.parse(data);
@@ -9,10 +8,10 @@ const edit = (req, res) => {
     var keys = Object.keys(projects);
     for (let key of keys) {
       if (projects[key].id === updatedForm.id) {
-        updatedForm.status = projects[key].status
+        updatedForm.status = projects[key].status;
         delete projects[key];
         key = updatedForm.name;
-        
+
         projects[key] = updatedForm;
       }
     }

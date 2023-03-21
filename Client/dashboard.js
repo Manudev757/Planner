@@ -67,6 +67,7 @@ function getRemainingTime(start, end, status) {
 function setPorjects(project, container) {
   var projects = project;
   let renderProject = ``;
+  console.log(container);
   document.querySelector("#" + container).innerHTML = ``;
   for (var i = 0; i < projects.length; i++) {
     renderProject = `

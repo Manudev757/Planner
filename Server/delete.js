@@ -2,8 +2,6 @@ const fs = require("fs");
 
 const Delete = (req, res) => {
   var deleteId = req.body;
-  console.log("delete route");
-
   fs.readFile("./Database/projectDb.json", (err, data) => {
     var userProject = JSON.parse(data);
     var projects = userProject[req.user.username];

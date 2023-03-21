@@ -28,7 +28,6 @@ const dashboard = (req, res) => {
               var edate = new Date(b.startDate).getTime();
               return sdate - edate;
             });
-            console.log("sdd", array);
             res.json(array);
           }
           if (needSort === "enddate1") {
